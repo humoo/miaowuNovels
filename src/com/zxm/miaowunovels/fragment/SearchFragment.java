@@ -216,7 +216,7 @@ public class SearchFragment extends Fragment{
         		
         		if (webView.getUrl().contains(".html") 
         				&& !webView.getUrl().contains("wap")
-        				&& webView.getUrl().contains("book/"+data.get(i).get("bookId"))) {
+        				&& webView.getUrl().contains("book/"+data.get(i).get("bookId")+"/")) {
         			Log.d("logd", "1:"+webView.getUrl().contains(".html"));
         			Log.d("logd", "2:"+!webView.getUrl().contains("wap"));
         			Log.d("logd", "3:"+webView.getUrl().contains(data.get(i).get("bookId")));

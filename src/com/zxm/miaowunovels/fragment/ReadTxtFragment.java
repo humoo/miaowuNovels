@@ -98,7 +98,7 @@ private void queryFromDB() {
            
         	for (int i = 0; i < data.size(); i++) {
         		
-        		if (webView.getUrl().contains(".html") && !webView.getUrl().contains("wap")  && webView.getUrl().contains("book/"+data.get(i).get("bookId"))) {
+        		if (webView.getUrl().contains(".html") && !webView.getUrl().contains("wap")  && webView.getUrl().contains("book/"+data.get(i).get("bookId")+"/")) {
         			flag=true;
         			k=i;
         			break;

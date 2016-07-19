@@ -2,6 +2,7 @@ package com.zxm.miaowunovels.adapter;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -69,17 +70,17 @@ public class MainAdapter extends BaseAdapter {
 		ImageView imageView=(ImageView) view.findViewById(R.id.iv_book_pic);
 		
 		
-		
+		map=new HashMap<>();
 		map=list.get(position);
 		
 		file=new File(fileDir,map.get("bookId")+".jpg");
-		if (file.exists()) {
+		if (file.exists()&&file.length()>3*1024) {
 			Bitmap bitmap=BitmapFactory.decodeFile(file.getAbsolutePath());
 			imageView.setImageBitmap(bitmap);
 		}
 		bookName.setText(map.get("bookName"));
 		bookNew.setText(map.get("bookNew"));
-		Log.e("loge","新的----"+ map.get("bookNew"));
+		Log.e("loge","新的----"+map.get("bookName")+"--" +map.get("bookNew"));
 		return view;
 	}
 

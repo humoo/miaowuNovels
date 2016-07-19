@@ -5,6 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
@@ -15,12 +18,10 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.View;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import android.webkit.WebSettings.LayoutAlgorithm;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.baoyz.swipemenulistview.SwipeMenu;
 import com.baoyz.swipemenulistview.SwipeMenuCreator;
@@ -47,7 +48,7 @@ public class MainActivity extends FragmentActivity {
 		@Override
 		public void create(SwipeMenu menu) {
 			// create "open" item
-			SwipeMenuItem openItem = new SwipeMenuItem(getApplicationContext());
+			//SwipeMenuItem openItem = new SwipeMenuItem(getApplicationContext());
 
 			SwipeMenuItem deleteItem = new SwipeMenuItem(
 					getApplicationContext());
@@ -110,13 +111,38 @@ public class MainActivity extends FragmentActivity {
 		listView.setMenuCreator(creator);
 		listView.setOnMenuItemClickListener(new SwipeMenuListView.OnMenuItemClickListener() {
 			@Override
-			public void onMenuItemClick(int position, SwipeMenu menu, int index) {
+			public boolean onMenuItemClick(int position, SwipeMenu menu, int index) {
 				switch (index) {
 				case 0:
 					// delete 将纪录从数据库删除，有本地文件提示删除
-					
+					removeFromDB(position);
 					break;
 				}
+				return true;
+			}
+			//删除记录
+			private void removeFromDB(final int position) {
+				
+				AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
+				builder.setTitle("提示");
+				builder.setMessage("确定删除该小说？");
+				builder.setPositiveButton("好的", new OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						
+						db.execSQL("delete from bookInfo where bookId = "+data.get(position).get("bookId"));
+						Toast.makeText(MainActivity.this,data.get(position).get("bookName") , 1).show();
+						//queryFromDB();
+						//
+						data.remove(position);
+						
+			      	    adapter.setDataList(data);     
+			      	    listView.setAdapter(adapter);
+					}
+				});
+				builder.setNegativeButton("不要", null);
+				builder.create().show();
+				
 			}
 
 		});
@@ -149,9 +175,9 @@ public class MainActivity extends FragmentActivity {
         	readTxtFragment.goBack();
         	readTxtFragment=null;
         	Log.e("loge", "onResume()222");
-        	  queryFromDB();
-        	  listView.setAdapter(adapter);
-          	adapter.setDataList(data);        
+    	    queryFromDB();
+    	    listView.setAdapter(adapter);
+      	    adapter.setDataList(data);        
 
         }
       

@@ -11,10 +11,11 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
-        public static final int black=0x7f060005;
+        public static final int black=0x7f060006;
         public static final int darkgreen=0x7f060004;
         public static final int darkwhite=0x7f060003;
-        public static final int lightblack=0x7f060006;
+        public static final int green=0x7f060005;
+        public static final int lightblack=0x7f060007;
         public static final int lightgreen=0x7f060000;
         public static final int lightwhite=0x7f060001;
         public static final int white=0x7f060002;
@@ -34,8 +35,11 @@ public final class R {
         public static final int back=0x7f020000;
         public static final int bookpic=0x7f020001;
         public static final int ic_launcher=0x7f020002;
-        public static final int more=0x7f020003;
-        public static final int search=0x7f020004;
+        public static final int miaowucat=0x7f020003;
+        public static final int more=0x7f020004;
+        public static final int search=0x7f020005;
+        public static final int search_pressed=0x7f020006;
+        public static final int serch_selector=0x7f020007;
     }
     public static final class id {
         public static final int action_settings=0x7f09000d;

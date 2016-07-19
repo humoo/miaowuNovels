@@ -26,6 +26,7 @@
                 android:textSize="20sp" />
 
             <LinearLayout
+                android:visibility="gone"
                 android:id="@+id/ll_more"
                 android:layout_width="50dp"
                 android:layout_height="60dp"
@@ -42,11 +43,12 @@
 
             <LinearLayout
                 android:id="@+id/ll_search"
-                android:layout_width="50dp"
+                android:layout_width="55dp"
                 android:layout_height="60dp"
-                android:layout_toLeftOf="@id/ll_more"
+				android:layout_alignParentRight="true"
+				android:background="@drawable/serch_selector"
                 android:paddingLeft="11dp"
-                android:paddingRight="11dp" >
+                android:paddingRight="16dp" >
 
                 <ImageView
                     android:layout_width="match_parent"
