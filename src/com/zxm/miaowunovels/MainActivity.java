@@ -131,13 +131,13 @@ public class MainActivity extends FragmentActivity {
 					public void onClick(DialogInterface dialog, int which) {
 						
 						db.execSQL("delete from bookInfo where bookId = "+data.get(position).get("bookId"));
-						Toast.makeText(MainActivity.this,data.get(position).get("bookName") , 1).show();
+						//Toast.makeText(MainActivity.this,data.get(position).get("bookName") , 1).show();
 						//queryFromDB();
 						//
 						data.remove(position);
 						
 			      	    adapter.setDataList(data);     
-			      	    listView.setAdapter(adapter);
+			      	    //listView.setAdapter(adapter);
 					}
 				});
 				builder.setNegativeButton("不要", null);
