@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp" >
+
+    <ImageView
+        android:layout_marginLeft="20dp"
+        android:id="@+id/iv_book_pic"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="50dp"
+        android:layout_height="60dp"
+        android:src="@drawable/bookpic" />
+
+    <TextView
+        android:id="@+id/tv_bookname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/iv_book_pic"
+        android:paddingLeft="20dp"
+        android:paddingTop="15dp"
+        android:text="完美世界"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_booknew"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_bookname"
+        android:layout_toRightOf="@id/iv_book_pic"
+        android:paddingLeft="20dp"
+        android:text="第一千九百八十章 一战平异域"
+        android:textColor="@color/lightblack"
+        android:textSize="14sp" 
+        android:paddingTop="10dp"/>
+
+</RelativeLayout>
