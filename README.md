@@ -4,3 +4,5 @@
 该软件仅搜索网络上已有资源，不保存任何资源，且不确定其来源及合法性，不为使用本软件而构成侵权的读者负责。
 # 重要
 导入项目前解压文件SwipeMenuListView-master.rar，将其导入添加作为依赖库
+# 
+![A](https://github.com/humoo/miaowuNovels/blob/master/bin/2016-07-19-11-01-01-088.jpeg) ![A](https://github.com/humoo/miaowuNovels/blob/master/bin/2016-07-19-11-01-11-148.jpeg) ![A](https://github.com/humoo/miaowuNovels/blob/master/bin/2016-07-19-11-02-28-390.jpeg) 
